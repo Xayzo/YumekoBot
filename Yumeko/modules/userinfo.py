@@ -422,9 +422,14 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>┎─⌈ Current Luna stats ⌋</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>╔═━「 Current Royzu Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
+    result += "\n<b>╘═━「 Powered By @DionProjects 」</b>"
+    update.effective_message.reply_text(
+        result,
+        parse_mode=ParseMode.HTML, 
+        disable_web_page_preview=True
+   )
 
 
 @run_async
@@ -521,10 +526,10 @@ def __user_info__(user_id):
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
 GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio)
 
-STATS_HANDLER = CommandHandler("stats", stats)
+STATS_HANDLER = CommandHandler(["stats", "rstats", "statistic"], stats)
 ID_HANDLER = DisableAbleCommandHandler("id", get_id)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid)
-INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info)
+INFO_HANDLER = DisableAbleCommandHandler(("info", "u"), info)
 
 SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me)
 GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me)
