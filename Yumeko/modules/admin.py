@@ -651,13 +651,13 @@ __help__ = """
  ❍ /delgpic*:* Same as above but to remove group profile pic.
  ❍ /setsticker*:* As a reply to some sticker to set it as group sticker set!
  ❍ /setdescription <description>*:* Sets new chat description in group.
- ❍ /admincache*:* force refresh the admins list
+ ❍ /reload*:* force refresh the admins list
  ❍ /antispam <on/off/yes/no>*:* Will toggle our antispam tech or return your current settings.
  ❍ /del*:* deletes the message you replied to
  ❍ /purge*:* deletes all messages between this and the replied to message.
  ❍ /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.
- ❍ /zombies: counts the number of deleted account in your group
- ❍ /zombies clean: Remove deleted accounts from group..
+ ❍ /ghost: counts the number of deleted account in your group
+ ❍ /ghost clean: Remove deleted accounts from group..
 
 *Note:* Night Mode chats get Automatically closed at 12 am(IST)
 and Automatically openned at 6 am(IST) To Prevent Night Spams.
