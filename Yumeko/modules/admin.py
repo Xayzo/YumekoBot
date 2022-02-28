@@ -665,20 +665,18 @@ and Automatically openned at 6 am(IST) To Prevent Night Spams.
 ⚠️ `Read from top`
 """
 
-ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist)
+ADMINLIST_HANDLER = DisableAbleCommandHandler(["admins", "staff", "adminlist", "listadmin"], adminlist)
 
-PIN_HANDLER = CommandHandler("pin", pin, filters=Filters.group)
-UNPIN_HANDLER = CommandHandler("unpin", unpin, filters=Filters.group)
+PIN_HANDLER = CommandHandler(["pin", "rpin"], pin, filters=Filters.group)
+UNPIN_HANDLER = CommandHandler(["unpin", "runpin"], unpin, filters=Filters.group)
 
 INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite)
 
-PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote)
-DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
+PROMOTE_HANDLER = DisableAbleCommandHandler(["promote", "setadmin"], promote)
+DEMOTE_HANDLER = DisableAbleCommandHandler(["demote", "deladmin"], demote)
 
 SET_TITLE_HANDLER = CommandHandler("title", set_title)
-ADMIN_REFRESH_HANDLER = CommandHandler(
-    "admincache", refresh_admin, filters=Filters.group
-)
+ADMIN_REFRESH_HANDLER = CommandHandler(["admincache", "reload", "load"], refresh_admin, filters=Filters.group)
 
 CHAT_PIC_HANDLER = CommandHandler("setgpic", setchatpic, filters=Filters.group)
 DEL_CHAT_PIC_HANDLER = CommandHandler(
