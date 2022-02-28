@@ -63,7 +63,7 @@ def download_youtube_audio(url: str):
     return [title, performer, duration, audio_file, thumbnail_file]
 
 
-@app.on_message(filters.command("ytmusic"))
+@app.on_message(filters.command("yutubmusic"))
 @capture_err
 async def music(_, message):
     global is_downloading
@@ -122,7 +122,7 @@ async def download_song(url):
 # Jiosaavn Music
 
 
-@app.on_message(filters.command("saavn") & ~filters.edited)
+@app.on_message(filters.command("nvaas") & ~filters.edited)
 @capture_err
 async def jssong(_, message):
     global is_downloading
@@ -167,7 +167,7 @@ async def jssong(_, message):
 # Lyrics
 
 
-@app.on_message(filters.command("lyricz"))
+@app.on_message(filters.command("lyriczz"))
 async def lyrics_func(_, message):
     if len(message.command) < 2:
         return await message.reply_text("**Usage:**\n/lyrics [QUERY]")
