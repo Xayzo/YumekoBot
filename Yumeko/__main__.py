@@ -72,11 +72,11 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-YUMEKO_IMG = "https://telegra.ph/file/e0040466048302df1a451.mp4"
+YUMEKO_IMG = "https://telegra.ph/file/ac5313a51b197b06047a8.jpg"
 
 PM_START_TEXT = """
-**Hey I am Yumeko** [ㅤ](https://telegra.ph/file/6643b0fb6792b2e5e844a.mp4)
-️➖➖➖➖➖➖➖➖➖➖➖➖➖
+**Hey I am Royzu** 👋🏻
+➖➖➖➖➖➖➖➖➖➖➖
 **×I'm a Powerfull Group Manager Bot With Cool Modules. feel free to add me to your groups!**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
 ☉ **×Click the button below for more.**
@@ -84,34 +84,32 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➕ Add Yumeko To Your group ➕", url="http://t.me/?startgroup=true"),
+        InlineKeyboardButton(text="➕ Add Royzu To Your group ➕", url="http://t.me/?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="About", callback_data="yumeko_"),
         InlineKeyboardButton(
-            text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/"
+            text="Updates", url="https://t.me/DionUpdates"
         ),
     ],
     [
         
         InlineKeyboardButton(
-            text="❓ Help&Commands", callback_data="help_back"),
+            text="❓ Help & Commands", callback_data="help_back"),
     ],
 ]
 
 
 HELP_STRINGS = """
-**Main commands:**  [ㅤ](https://telegra.ph/file/efdee100cc31b4b3e0be2.mp4)
+**Main commands:**
 ❂ /start: Starts me! You've probably already used this.
 ❂ /help: Sends this message; I'll tell you more about myself.
 
-All commands can either be used with / or !.
-If you want to report any bugs or need any help with setting up Yumeko, reach us at here"""
+All commands can either be used with / or !."""
 
 
 
-DONATE_STRING = """Hehe, baka!!
- [Is that so!!](https://t.me/Ryu_God) ❤️
+DONATE_STRING = """[Click Here!!](https://t.me/Royzu) 🔥
 """
 
 IMPORTED = {}
@@ -222,12 +220,12 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.raboutvideo(
-            YUMEKO_IMG, caption= "Baka, I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            YUMEKO_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/")]]
+                [[InlineKeyboardButton(text="Updates", url="https://t.me/DionProjects")]]
             ),
         )
         
@@ -373,11 +371,11 @@ def yumeko_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Setup Guide", callback_data="yumeko_setup"
-                        ),
+                            text="Setup Guide", callback_data="yumeko_setup"),
                         InlineKeyboardButton(
-                            text="T & C", callback_data="yumeko_tc"
-                        ),
+                            text="T & C", callback_data="yumeko_lub"),
+                    ],
+                        InlineKeyboardButton(text="Music Player", callback_data="yumeko_basichelp"
                     ],
                     [InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="yumeko_back")],
                 ]
@@ -394,23 +392,20 @@ def yumeko_about_callback(update, context):
 
     elif query.data == "yumeko_basichelp":
         query.message.edit_text(
-            text=f"**──「 Basic Guide 」──**"
-            f"\n\n1.) first, add me to your group.\n"
-            f"2.) then promote me as admin and give all permissions except anonymous admin.\n"
-            f"3.) after promoting me, type /reload in group to update the admin list.\n"
-            f"4.) add @LunaAssistant to your group or type /join to invite her.\n"
-            f"5.) turn on the video chat first before start to play music.\n"
-            f"\n📌 if userbot doesn't join voice chat make sure voice chat is active, or type /leave then type /join again..",
+            text=f"**──「 Music Player 」──**"
+            f"\n\n1.) First, add me to your group.\n"
+            f"2.) Then promote me as admin and give all permissions except anonymous admin.\n"
+            f"3.) After promoting me, type /reload in group to update the admin list.\n"
+            f"4.) Add @RoyzuAssistant to your group or type /userbotjoin to invite her.\n"
+            f"5.) Turn on the video chat first before start to play music.\n"
+            f"\n📌 If userbot doesn't join voice chat make sure voice chat is active, or type /userbotleave then type /userbotjoin again..",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="📗 Basic CMD", callback_data="yumeko_admin"),
-                    InlineKeyboardButton(text="📘 Advanced CMD", callback_data="yumeko_notes"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="📙 Admin CMD", callback_data="yumeko_support"),
+                    InlineKeyboardButton(text="📗 Member CMD", callback_data="yumeko_admin"),
+                    InlineKeyboardButton(text="📘 Admin CMD", callback_data="yumeko_support"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="yumeko_back"),
@@ -421,13 +416,12 @@ def yumeko_about_callback(update, context):
         )
     elif query.data == "yumeko_admin":
         query.message.edit_text(
-            text=f"**──「 Basic Guide 」──**"
-            f"\n\n/play (song name) - play song from youtube"
-            f"\n/ytp (song name) - play song directly from"
-            f"\nB/stream (reply to audio) - play song using audio file."
+            text=f"**──「 Member Commands 」──**"
+            f"\n\n/rplay <song name/audio> - play song from Youtube"
+            f"\n/vplay <song name/video> - play video from Youtube"
             f"\n/playlist - show the list song in queue"
-            f"\n/song (song name) - download song from youtube."
-            f"\n/search (video name) - search video from youtube detailed."
+            f"\n/song (song name) - download song from Youtube."
+            f"\n/vsong (video name) - download video from Youtube."
             f"\n/lyric - (song name) lyrics scrapper",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -446,24 +440,23 @@ def yumeko_about_callback(update, context):
             f"\n/id - show the group/user id & other",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="yumeko_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="yumeko_setup")]]
             ),
         )
     elif query.data == "yumeko_support":
         query.message.edit_text(
             text=f"──「 Admin CMD 」──\n"
-            f"\n/player - show the music playing status"
             f"\n/pause - pause the music streaming"
+            f"\n/vpause - pause the video streaming"
             f"\n/resume - resume the music was paused"
+            f"\n/vresume - resume the video was paused"
             f"\n/skip - skip to the next song"
+            f"\n/vskip - skip to the next videi"
             f"\n/end - stop music streaming"
-            f"\n/join - invite userbot join to your group"
-            f"\n/leave - order the userbot to leave your group"
-            f"\n/auth - authorized user for using music bot"
-            f"\n/unauth - unauthorized for using music bot"
-            f"\n/control - open the player settings panel"
-            f"\n/delcmd (on | off) - enable / disable del cmd feature"
-            f"\n/music (on / off) - disable / enable music player in your group",
+            f"\n/vend - stop video streaming"
+            f"\n/userbotjoin - invite userbot join to your group"
+            f"\n/userbotleave - order the userbot to leave your group"
+            f"\n/settings - open the player settings panel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -476,21 +469,17 @@ def yumeko_about_callback(update, context):
         )
     elif query.data == "yumeko_credit":
         query.message.edit_text(
-            text=f"<b> `Cʀᴇᴅɪᴛ Fᴏʀ Lᴜɴᴀ Dᴇᴠ's` </b>\n"
-            f"\nHᴇʀᴇ Sᴏᴍᴇ Dᴇᴠᴇʟᴏᴘᴇʀs Hᴇʟᴘɪɴɢ Iɴ Mᴀᴋɪɴɢ Tʜᴇ YUMEKO",
+            text=f"<b> `Credits for Royzu` </b>\n"
+            f"\nHᴇʀᴇ Sᴏᴍᴇ Dᴇᴠᴇʟᴏᴘᴇʀs Hᴇʟᴘɪɴɢ Iɴ Mᴀᴋɪɴɢ Tʜᴇ RoyzuRobot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="亗 ʀʏᴜ", url="https://t.me/Ryu_God"),
-                    InlineKeyboardButton(text="Tarun • [ᴀc͜͡ɢᴄ]", url="https://t.me/TheBlackLinen"),
+                    InlineKeyboardButton(text="亗 Dion", url="https://t.me/Royzu"),
+                    InlineKeyboardButton(text="亗 Galih ", url="https://t.me/glixyr"),
                  ],
                  [
-                    InlineKeyboardButton(text="Bot", url="https://t.me/"),
-                    InlineKeyboardButton(text="Support", url="https://t.me/"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Back", callback_data="yumeko_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="yumeko_lic"),
                  
                  ]
                 ]
@@ -503,17 +492,18 @@ def yumeko_about_callback(update, context):
                  f"\nYou can add me to your group by clicking this link and selecting the chat.\n"
                  f"\nRead Admin Permissions and Anti-spam for basic info.\n"
                  f"\nRead Detailed Setup Guide to learn about setting up the bot in detail. (Recommended)\n"
-                 f"\nIf you do need help with further instructions feel free to ask in @lunaXresso.",
+                 f"\nIf you do need help with further instructions feel free to ask in @DionSupport or @Royzu.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Admins Permissions", callback_data="luna_asu"),
-                    InlineKeyboardButton(text="Anti Spam", callback_data="luna_asi"),
+                    InlineKeyboardButton(text="Admins Permissions", callback_data="yumeko_del"),
+                    InlineKeyboardButton(text="Anti Spam", callback_data="yumeko_luv"),
                  ],
+                    InlineKeyboardButton(text="Advanced Command", callback_data="yumeko_notes"),
                  [
-                    InlineKeyboardButton(text="Back", callback_data="luna_"),
+                    InlineKeyboardButton(text="Back", callback_data="yumeko_"),
                  
                  ]
                 ]
@@ -523,11 +513,11 @@ def yumeko_about_callback(update, context):
     elif query.data == "yumeko_del":
         query.message.edit_text(
             text=f"｢ Admin Permissions 」\n"
-                     f"\nTo avoid slowing down, Yumeko caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), Yumeko will only find out ~10 minutes later.\n"
-                    f"\nIf you want to update them immediately, you can use the /admincache or /reload command, that'll force Yumeko to check who the admins are again and their permissions\n"
+                     f"\nTo avoid slowing down, Royzu caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), Royzu will only find out ~10 minutes later.\n"
+                    f"\nIf you want to update them immediately, you can use the /admincache or /reload command, that'll force Royzu to check who the admins are again and their permissions\n"
                     f"\nIf you are getting a message saying:\nYou must be this chat administrator to perform this action!\n"
-                    f"\nThis has nothing to do with Yumeko's rights; this is all about YOUR permissions as an admin. Yumeko respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with Yumeko. Similarly, to change Yumeko settings, you need to have the Change group info permission.\n"
-                    f"\nThe message very clearly states that you need these rights - not Yumeko.",
+                    f"\nThis has nothing to do with Royzu's rights; this is all about YOUR permissions as an admin. Yumeko respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with Royzu. Similarly, to change Royzu settings, you need to have the Change group info permission.\n"
+                    f"\nThe message very clearly states that you need these rights - not Royzu.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -539,7 +529,7 @@ def yumeko_about_callback(update, context):
         query.message.edit_text(
             text=f"｢ Anti-Spam Settings 」\n"
                      f"\nAntispam: "
-                     f"\nBy enabling this, you can protect your groups free from scammers/spammers.\nRun /antispam on in your chat to enable.\nAppeal Chat: @\n"
+                     f"\nBy enabling this, you can protect your groups free from scammers/spammers.\nRun /antispam on in your chat to enable.\n"
                      f"\n✪ Anti-Flood allows you to keep your chat clean from flooding."
                      f"\n✪ With the help of Blaclists you can blacklist words,sentences and stickers which you don't want to be used by group members."
                      f"\n✪ By enabling Reports, admins get notified when users reports in chat."
@@ -560,7 +550,7 @@ def yumeko_about_callback(update, context):
                 f"\n✪ If someone is spamming your group, you can use report feature from your Telegram Client."
                 f"\n✪ Make sure antiflood is enabled, so that users cannot flood/spam your chat."
                 f"\n✪ Do not spam commands, buttons, or anything in bot PM, else you will be Ignored by bot or Gbanned."
-                f"\n✪ If you need to ask anything about this bot or you need help, reach us at @"
+                f"\n✪ If you need to ask anything about this bot or you need help, reach us at @DionSupport"
                 f"\n✪ Make sure you read rules and follow them when you join Support Chat."
                 f"\n✪ Spamming in Support Chat, will reward you GBAN and reported to Telegram as well.\n"
                 f"\nTerms & Conditions can be changed anytime.",
@@ -570,7 +560,7 @@ def yumeko_about_callback(update, context):
                 [
                   [
                      InlineKeyboardButton(text="Credits", callback_data="yumeko_lic"),
-                     InlineKeyboardButton(text="Back", callback_data="help_back"),
+                     InlineKeyboardButton(text="Back", callback_data="yumeko_"),
                   ]
                 ]
             ),
@@ -578,17 +568,15 @@ def yumeko_about_callback(update, context):
 
     elif query.data == "yumeko_lic":
         query.message.edit_text(
-            text=f"Yumeko is a powerful bot for managing groups with additional features.\n"
-              f"\nYumeko's Licensed Under The GNU (General Public License v3.0)\n"
-              f"\nIf you have any question about Luna,"
-              f"\nreach us at Support Chat.",
+            text=f"Royzu is a powerful bot for managing groups with additional features.\n"
+              f"\nRoyzu's Licensed Under The GNU (General Public License v3.0)",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
+                     InlineKeyboardButton(text="Developer", callback_data="yumeko_credit"),
                      InlineKeyboardButton(text="Back", callback_data="yumeko_lub"),
-                     InlineKeyboardButton(text="☎️ Support", url=f"https://t.me/"),
                   ]
                 ]
             ),
@@ -651,14 +639,8 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Hᴇʟᴘ ❔",
+                            text="Hᴇʟᴘ & Commands ❔",
                             url="t.me/{}?start=help".format(context.bot.username),
-                        )
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ 📢 ",
-                            url="https://t.me/{}".format(SUPPORT_CHAT),
                         )
                     ],
                 ]
@@ -901,7 +883,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I Aᴍ Aʟɪᴠᴇ](https://telegra.ph/file/66f93d07eb12515e973b7.mp4), parse_mode=ParseMode.MARKDOWN")
+            dispatcher.bot.sendMessage("@DionRobotSupport", "I Aᴍ Aʟɪᴠᴇ🔥 ")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -947,7 +929,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Yumeko is deployed successfully.")
+        LOGGER.info("Royzu is deployed successfully.")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
