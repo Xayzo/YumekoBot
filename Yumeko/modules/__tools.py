@@ -1,10 +1,6 @@
 __mod_name__ = "Tools"
 
 __help__ = """
-*Fake Info*
- ❍ /fakegen*:* Generates Fake Information
- ❍ /picgen*:* Generate a fake pic 
-
 *Date-time-Weather*
  ❍ /time <country code>*:* Gives information about a timezone.
  ❍ /weather <city>*:* Get weather info in a particular place.
