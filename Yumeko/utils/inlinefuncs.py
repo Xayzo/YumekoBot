@@ -82,7 +82,7 @@ async def inline_help_func(__help__):
             input_message_content=InputTextMessageContent(
                 "Click a button to get started."
             ),
-            thumb_url="https://telegra.ph/file/a03660425cd749faf0a4a.jpg",
+            thumb_url="https://telegra.ph/file/8f0747899ae88ea7965c9.jpg",
             reply_markup=buttons,
         ),
     ]
@@ -101,20 +101,20 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[Yumeko](https://t.me/):**
+**[Royzu Robot 🔰](https://t.me/RoyzuRobot):**
 **RoBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](https://t.me/) | [UBOT](https://t.me/Ryu_God)
+**Profiles:** [Royzu](https://t.me/RoyzuRobot) | [My Owner](https://t.me/Royzu)
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
-            description="Check Yumeko Stats",
-            thumb_url="https://telegra.ph/file/fbb803ea2af74de745362.jpg",
+            description="Check Royzu Stats",
+            thumb_url="https://telegra.ph/file/8f0747899ae88ea7965c9.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
@@ -128,20 +128,20 @@ async def about_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "About"
     buttons.add(
-        InlineKeyboardButton("Support", url=f"https://t.me/"),
-        InlineKeyboardButton("Channel", url=f"https://t.me/"),
+        InlineKeyboardButton("Updates", url=f"https://t.me/DionProjects"),
+        InlineKeyboardButton("Support", url=f"https://t.me/DionSupport"),
     )
 
     msg = f"""
-[Yumeko✨](https://t.me/) 
-   Maintained by [X](t.me/Ryu_God) [Y](t.me/TheBlacklinen) 
+[Royzu 🔥](https://t.me/RoyzuRobot) 
+   Maintained by [Dion](t.me/Royzu) | [Dion Projects](t.me/DionProjects) 
 Built with using python-telegram-bot v13.7 Running on Python 3.9.7
 """
     answers.append(
         InlineQueryResultArticle(
             title="About",
-            description="About Yumeko",
-            thumb_url="https://telegra.ph/file/fbb803ea2af74de745362.jpg",
+            description="About Royzu",
+            thumb_url="https://telegra.ph/file/8f0747899ae88ea7965c9.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
