@@ -26,7 +26,7 @@ async def awake(event):
   YUMEKO += "• /skip - **To Skip playback of the Video to the next Video** \n"
   YUMEKO += "• /end - **To Stop Song playback** \n"
   YUMEKO += "• /vend - **To Stop Video playback** \n"
-  YUMEKO += "• /settings - **open the player settings panel** \n"
+  YUMEKO += "• /msettings - **open the player settings panel** \n"
   YUMEKO += "• /reload - **To Refresh admin list** \n"
 
   BUTTON = [[Button.url("☎️ Support", "https://t.me/DionSupport"), Button.url("📡 Updates", "https://t.me/DionProjects")]]
