@@ -7,23 +7,27 @@ from pyrogram import __version__ as pyrover
 from Yumeko.events import register as MEMEK
 from Yumeko import telethn as tbot
 
-PHOTO = "https://telegra.ph/file/7c3c26e0ed938aec91209.jpg"
+PHOTO = "https://telegra.ph/file/460d20a0ec51ef80de06e.jpg"
 
-@MEMEK(pattern=("/mhelp"))
+@MEMEK(pattern=("/musichelp"))
 async def awake(event):
   tai = event.sender.first_name
-  YUMEKO = "** ──「 Basic Guide 」── ** \n\n"
-  YUMEKO += "• /play **(song title) — To Play the song you requested via YouTube** \n"
-  YUMEKO += "• /search ** (song/video title) – To search for links on YouTube with details** \n"
+  YUMEKO = "** ──「 Member Commands 」── ** \n\n"
+  YUMEKO += "• /rplay **(song title) — To Play the song you requested via YouTube** \n"
+  YUMEKO += "• /vplay ** (song/video title) – To Play the video you requested via Youtube** \n"
   YUMEKO += "• /playlist - **show the list song in queue** \n"
   YUMEKO += "•/lyric - ** (song name) lyrics scrapper** \n\n"
-  YUMEKO += "** ──「 Admin CMD 」── ** \n\n"
+  YUMEKO += "** ──「 Admin Commands 」── ** \n\n"
   YUMEKO += "• /pause - **To Pause Song playback** \n"
+  YUMEKO += "• /vpause - **To Pause Video playback** \n"
   YUMEKO += "• /resume - **To resume playback of the paused Song** \n"
-  YUMEKO += "• /skip - **To Skip playback of the song to the next Song** \n"
+  YUMEKO += "• /vresume - **To resume playback of the paused Video** \n"
+  YUMEKO += "• /skip - **To Skip playback of the Song to the next Song** \n"
+  YUMEKO += "• /skip - **To Skip playback of the Video to the next Video** \n"
   YUMEKO += "• /end - **To Stop Song playback** \n"
-  YUMEKO += "• /control - **open the player settings panel** \n"
+  YUMEKO += "• /vend - **To Stop Video playback** \n"
+  YUMEKO += "• /settings - **open the player settings panel** \n"
   YUMEKO += "• /reload - **To Refresh admin list** \n"
 
-  BUTTON = [[Button.url("☎️ Support", "https://t.me/lunaXresso"), Button.url("📡 Updates", "https://t.me/ZeinzoProject")]]
+  BUTTON = [[Button.url("☎️ Support", "https://t.me/DionSupport"), Button.url("📡 Updates", "https://t.me/DionProjects")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=LUNA,  buttons=BUTTON)
