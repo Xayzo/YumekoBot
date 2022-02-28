@@ -456,7 +456,7 @@ def yumeko_about_callback(update, context):
             f"\n/vend - stop video streaming"
             f"\n/userbotjoin - invite userbot join to your group"
             f"\n/userbotleave - order the userbot to leave your group"
-            f"\n/settings - open the player settings panel",
+            f"\n/msettings - open the player settings panel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
