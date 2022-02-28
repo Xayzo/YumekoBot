@@ -49,24 +49,24 @@ async def is_administrator(user_id: int, message):
 
 
 
-@telethn.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
+@telethn.on(events.NewMessage(pattern=f"^[!/]ghost ?(.*)"))
 async def zombies(event):
-    """ For .zombies command, list all the zombies in a chat. """
+    """ For .ghost command, list all the Deleted Account in a chat. """
 
     con = event.pattern_match.group(1).lower()
     del_u = 0
     del_status = "No Deleted Accounts Found, Group Is Clean."
 
     if con != "clean":
-        find_zombies = await event.respond("Searching For Zombies...")
+        find_zombies = await event.respond("Searching For Deleted Accounts...")
         async for user in event.client.iter_participants(event.chat_id):
 
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = f"Found **{del_u}** Zombies In This Group.\
-            \nClean Them By Using - `/zombies clean`"
+            del_status = f"Found **{del_u}** Deleted Accounts In This Group.\
+            \nClean Them By Using - `/ghost clean`"
         await find_zombies.edit(del_status)
         return
 
@@ -84,7 +84,7 @@ async def zombies(event):
         await event.respond("I Am Not An Admin Here!")
         return
 
-    cleaning_zombies = await event.respond("Cleaning Zombies...")
+    cleaning_zombies = await event.respond("Cleaning Deleted Accounts...")
     del_u = 0
     del_a = 0
 
@@ -104,10 +104,10 @@ async def zombies(event):
             del_u += 1
 
     if del_u > 0:
-        del_status = f"Cleaned `{del_u}` Zombies"
+        del_status = f"Cleaned `{del_u}` Deleted Accounts"
 
     if del_a > 0:
-        del_status = f"Cleaned `{del_u}` Zombies \
+        del_status = f"Cleaned `{del_u}` Deleted Accounts \
         \n`{del_a}` Zombie Admin Accounts Are Not Removed!"
 
     await cleaning_zombies.edit(del_status)
